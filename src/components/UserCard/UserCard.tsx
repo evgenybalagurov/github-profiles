@@ -1,3 +1,4 @@
+import { UserInfo } from 'components/UserInfo';
 import { UserStat } from 'components/UserStat';
 import { UserTitle } from 'components/UserTitle';
 import { LocalGithubUser } from 'types';
@@ -11,5 +12,11 @@ export const UserCard = (props: UserCardProps) => (
     <UserTitle name={props.name} login={props.login} created={props.created} />
     <p className={`${styles.bio}${props.bio ? '' : `${styles.empty}`}`}>{props.bio || ''}</p>
     <UserStat repos={props.repos} followers={props.followers} following={props.following} />
+    <UserInfo
+      blog={props.blog}
+      company={props.company}
+      location={props.location}
+      twitter={props.twitter}
+    />
   </div>
 );
